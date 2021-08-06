@@ -15,6 +15,9 @@
 		0665821426BCCE8D00684C8E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066581E926BCCE8900684C8E /* ContentView.swift */; };
 		0665821526BCCE8D00684C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 066581EA26BCCE8D00684C8E /* Assets.xcassets */; };
 		0665821626BCCE8D00684C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 066581EA26BCCE8D00684C8E /* Assets.xcassets */; };
+		0665822626BCD75300684C8E /* FontService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665822526BCD75300684C8E /* FontService.swift */; };
+		0665822726BCD75300684C8E /* FontService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665822526BCD75300684C8E /* FontService.swift */; };
+		0665822826BCE20500684C8E /* FontService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665822526BCD75300684C8E /* FontService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +41,9 @@
 		066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontEditorApp.swift; sourceTree = "<group>"; };
 		066581E926BCCE8900684C8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		066581EA26BCCE8D00684C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		066581EF26BCCE8D00684C8E /* GoogleFontEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleFontEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		066581EF26BCCE8D00684C8E /* GoogleFontViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleFontViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		066581F226BCCE8D00684C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		066581F726BCCE8D00684C8E /* GoogleFontEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleFontEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		066581F726BCCE8D00684C8E /* GoogleFontViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleFontViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		066581F926BCCE8D00684C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		066581FA26BCCE8D00684C8E /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		066581FF26BCCE8D00684C8E /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +52,7 @@
 		0665820A26BCCE8D00684C8E /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0665820E26BCCE8D00684C8E /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		0665821026BCCE8D00684C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0665822526BCD75300684C8E /* FontService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */,
 				066581E926BCCE8900684C8E /* ContentView.swift */,
 				066581EA26BCCE8D00684C8E /* Assets.xcassets */,
+				0665822526BCD75300684C8E /* FontService.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -108,8 +113,8 @@
 		066581F026BCCE8D00684C8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				066581EF26BCCE8D00684C8E /* GoogleFontEditor.app */,
-				066581F726BCCE8D00684C8E /* GoogleFontEditor.app */,
+				066581EF26BCCE8D00684C8E /* GoogleFontViewer.app */,
+				066581F726BCCE8D00684C8E /* GoogleFontViewer.app */,
 				066581FF26BCCE8D00684C8E /* Tests iOS.xctest */,
 				0665820A26BCCE8D00684C8E /* Tests macOS.xctest */,
 			);
@@ -154,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		066581EE26BCCE8D00684C8E /* GoogleFontEditor (iOS) */ = {
+		066581EE26BCCE8D00684C8E /* GoogleFontViewer (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0665821926BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontEditor (iOS)" */;
+			buildConfigurationList = 0665821926BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontViewer (iOS)" */;
 			buildPhases = (
 				066581EB26BCCE8D00684C8E /* Sources */,
 				066581EC26BCCE8D00684C8E /* Frameworks */,
@@ -166,14 +171,14 @@
 			);
 			dependencies = (
 			);
-			name = "GoogleFontEditor (iOS)";
+			name = "GoogleFontViewer (iOS)";
 			productName = "GoogleFontEditor (iOS)";
-			productReference = 066581EF26BCCE8D00684C8E /* GoogleFontEditor.app */;
+			productReference = 066581EF26BCCE8D00684C8E /* GoogleFontViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		066581F626BCCE8D00684C8E /* GoogleFontEditor (macOS) */ = {
+		066581F626BCCE8D00684C8E /* GoogleFontViewer (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0665821C26BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontEditor (macOS)" */;
+			buildConfigurationList = 0665821C26BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontViewer (macOS)" */;
 			buildPhases = (
 				066581F326BCCE8D00684C8E /* Sources */,
 				066581F426BCCE8D00684C8E /* Frameworks */,
@@ -183,9 +188,9 @@
 			);
 			dependencies = (
 			);
-			name = "GoogleFontEditor (macOS)";
+			name = "GoogleFontViewer (macOS)";
 			productName = "GoogleFontEditor (macOS)";
-			productReference = 066581F726BCCE8D00684C8E /* GoogleFontEditor.app */;
+			productReference = 066581F726BCCE8D00684C8E /* GoogleFontViewer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		066581FE26BCCE8D00684C8E /* Tests iOS */ = {
@@ -249,7 +254,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 066581E626BCCE8900684C8E /* Build configuration list for PBXProject "GoogleFontEditor" */;
+			buildConfigurationList = 066581E626BCCE8900684C8E /* Build configuration list for PBXProject "GoogleFontViewer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -262,8 +267,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				066581EE26BCCE8D00684C8E /* GoogleFontEditor (iOS) */,
-				066581F626BCCE8D00684C8E /* GoogleFontEditor (macOS) */,
+				066581EE26BCCE8D00684C8E /* GoogleFontViewer (iOS) */,
+				066581F626BCCE8D00684C8E /* GoogleFontViewer (macOS) */,
 				066581FE26BCCE8D00684C8E /* Tests iOS */,
 				0665820926BCCE8D00684C8E /* Tests macOS */,
 			);
@@ -308,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0665822626BCD75300684C8E /* FontService.swift in Sources */,
 				0665821326BCCE8D00684C8E /* ContentView.swift in Sources */,
 				0665821126BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */,
 			);
@@ -317,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0665822726BCD75300684C8E /* FontService.swift in Sources */,
 				0665821426BCCE8D00684C8E /* ContentView.swift in Sources */,
 				0665821226BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */,
 			);
@@ -326,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0665822826BCE20500684C8E /* FontService.swift in Sources */,
 				0665820426BCCE8D00684C8E /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,12 +351,12 @@
 /* Begin PBXTargetDependency section */
 		0665820126BCCE8D00684C8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 066581EE26BCCE8D00684C8E /* GoogleFontEditor (iOS) */;
+			target = 066581EE26BCCE8D00684C8E /* GoogleFontViewer (iOS) */;
 			targetProxy = 0665820026BCCE8D00684C8E /* PBXContainerItemProxy */;
 		};
 		0665820C26BCCE8D00684C8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 066581F626BCCE8D00684C8E /* GoogleFontEditor (macOS) */;
+			target = 066581F626BCCE8D00684C8E /* GoogleFontViewer (macOS) */;
 			targetProxy = 0665820B26BCCE8D00684C8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -479,8 +487,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontEditor;
-				PRODUCT_NAME = GoogleFontEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontViewer;
+				PRODUCT_NAME = GoogleFontViewer;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,8 +509,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontEditor;
-				PRODUCT_NAME = GoogleFontEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontViewer;
+				PRODUCT_NAME = GoogleFontViewer;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -527,8 +535,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontEditor;
-				PRODUCT_NAME = GoogleFontEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontViewer;
+				PRODUCT_NAME = GoogleFontViewer;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -551,8 +559,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontEditor;
-				PRODUCT_NAME = GoogleFontEditor;
+				PRODUCT_BUNDLE_IDENTIFIER = chenhai.teng.GoogleFontViewer;
+				PRODUCT_NAME = GoogleFontViewer;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
@@ -576,7 +584,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "GoogleFontEditor (iOS)";
+				TEST_TARGET_NAME = "GoogleFontViewer (iOS)";
 			};
 			name = Debug;
 		};
@@ -598,7 +606,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "GoogleFontEditor (iOS)";
+				TEST_TARGET_NAME = "GoogleFontViewer (iOS)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -621,7 +629,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "GoogleFontEditor (macOS)";
+				TEST_TARGET_NAME = "GoogleFontViewer (macOS)";
 			};
 			name = Debug;
 		};
@@ -643,14 +651,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "GoogleFontEditor (macOS)";
+				TEST_TARGET_NAME = "GoogleFontViewer (macOS)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		066581E626BCCE8900684C8E /* Build configuration list for PBXProject "GoogleFontEditor" */ = {
+		066581E626BCCE8900684C8E /* Build configuration list for PBXProject "GoogleFontViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0665821726BCCE8D00684C8E /* Debug */,
@@ -659,7 +667,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0665821926BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontEditor (iOS)" */ = {
+		0665821926BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontViewer (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0665821A26BCCE8D00684C8E /* Debug */,
@@ -668,7 +676,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0665821C26BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontEditor (macOS)" */ = {
+		0665821C26BCCE8D00684C8E /* Build configuration list for PBXNativeTarget "GoogleFontViewer (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0665821D26BCCE8D00684C8E /* Debug */,
