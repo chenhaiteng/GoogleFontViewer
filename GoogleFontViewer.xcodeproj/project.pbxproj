@@ -91,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		062B9A8B26BD1DAF00A6C185 /* WebFontService */ = {
+			isa = PBXGroup;
+			children = (
+				0665822526BCD75300684C8E /* FontService.swift */,
+				062B9A8726BD10A900A6C185 /* WebFont.swift */,
+			);
+			path = WebFontService;
+			sourceTree = "<group>";
+		};
 		066581E226BCCE8900684C8E = {
 			isa = PBXGroup;
 			children = (
@@ -106,11 +115,10 @@
 		066581E726BCCE8900684C8E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				062B9A8B26BD1DAF00A6C185 /* WebFontService */,
 				066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */,
 				066581E926BCCE8900684C8E /* ContentView.swift */,
 				066581EA26BCCE8D00684C8E /* Assets.xcassets */,
-				0665822526BCD75300684C8E /* FontService.swift */,
-				062B9A8726BD10A900A6C185 /* WebFont.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
