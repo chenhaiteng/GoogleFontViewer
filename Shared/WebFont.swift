@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum WebFontDate : String {
+    case format = "yyyy-MM-dd"
+}
+
 struct WebFont: Codable {
     var kind: String
     var family: String
@@ -21,4 +25,12 @@ struct WebFont: Codable {
 struct WebFontList: Codable {
     var kind: String
     var items: [WebFont]
+    
+    static func decoder() -> JSONDecoder {
+        let decoder = JSONDecoder()
+        let formatter = DateFormatter()
+        formatter.dateFormat = WebFontDate.format.rawValue
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        return decoder
+    }
 }

@@ -72,6 +72,11 @@ class Tests_iOS: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    func fetchFontList() throws -> AnyPublisher<WebFontList, Error> {
+        try FontService.fetchData()
+            .decode(type: WebFontList.self, decoder: WebFontList.decoder()).eraseToAnyPublisher()
+    }
+    
     func testFontService() throws {
         let prefix = "https://www.googleapis.com/webfonts/v1/webfonts?key"
         
@@ -80,10 +85,15 @@ class Tests_iOS: XCTestCase {
             XCTAssertTrue(url.absoluteString.hasPrefix(prefix)) // check path combination correct
             // Check connect to service success
             do {
-                let result = try `await`(FontService.fetchFonts())
-                XCTAssertEqual(result.kind, "webfonts#webfontList")
-                XCTAssertFalse(result.items.isEmpty)
-                for item in result.items {
+                // Check get data from service
+                let result = try `await`(FontService.fetchData())
+                XCTAssertFalse(result.isEmpty)
+                
+                // verify webfont coadable
+                let list = try `await`(fetchFontList())
+                XCTAssertEqual(list.kind, "webfonts#webfontList")
+                XCTAssertFalse(list.items.isEmpty)
+                for item in list.items {
                     XCTAssertEqual(item.kind, "webfonts#webfont")
                 }
             } catch {
@@ -93,6 +103,8 @@ class Tests_iOS: XCTestCase {
             XCTFail("create url failed")
         }
     }
+    
+    
     
 //    func testExample() throws {
 //        // UI tests must launch the application that they test.
