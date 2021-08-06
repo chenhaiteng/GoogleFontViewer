@@ -35,14 +35,6 @@ enum FontService : String {
             .dataTaskPublisher(for: url)
             .map { $0.data }
             .eraseToAnyPublisher()
-//            .decode(type: T.self, decoder: decoder)
-//            .eraseToAnyPublisher()
-//            .replaceError(with: DaySchedules())
-//            .eraseToAnyPublisher()
-//            .receive(on: DispatchQueue.global())
-//            .sink { daySchedules in
-//                self.rawSchedules = daySchedules.seperateByDate()
-//            }
     }
 }
 

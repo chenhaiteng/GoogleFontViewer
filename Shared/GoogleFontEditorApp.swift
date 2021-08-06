@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct GoogleFontViewerApp: App {
+    @StateObject var model = FontsModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(model)
         }
     }
 }

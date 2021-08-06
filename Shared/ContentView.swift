@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import WebKit
+import WebView
 
 struct ContentView: View {
+    @EnvironmentObject var model: FontsModel
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(model.fonts.items) { font in
+            WebView(webView: WKWebView().apply({ web in
+                web.loadHTMLString(font.previewHtml(color: Color.black, background: Color.white), baseURL: nil)
+            })).frame(height: 50)
+        }
     }
 }
 
