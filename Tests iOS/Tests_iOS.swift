@@ -81,7 +81,11 @@ class Tests_iOS: XCTestCase {
             // Check connect to service success
             do {
                 let result = try `await`(FontService.fetchFonts())
-                XCTAssertFalse(result.isEmpty)
+                XCTAssertEqual(result.kind, "webfonts#webfontList")
+                XCTAssertFalse(result.items.isEmpty)
+                for item in result.items {
+                    XCTAssertEqual(item.kind, "webfonts#webfont")
+                }
             } catch {
                 XCTFail("\(error)")
             }

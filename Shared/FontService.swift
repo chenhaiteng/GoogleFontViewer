@@ -29,13 +29,16 @@ enum FontService : String {
         }
     }
     
-    static func fetchFonts() throws -> AnyPublisher<Data, URLError> {
+    static func fetchFonts() throws -> AnyPublisher<WebFontList, Error> {
         guard let url = requestUrl else { throw URLError(.badURL) }
-//        let decoder = JSONDecoder()
-//        decoder.dateDecodingStrategy = .iso8601
+        let decoder = JSONDecoder()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
         return URLSession.shared
             .dataTaskPublisher(for: url)
             .map { $0.data }
+            .decode(type: WebFontList.self, decoder: decoder)
             .eraseToAnyPublisher()
 //            .decode(type: T.self, decoder: decoder)
 //            .eraseToAnyPublisher()
