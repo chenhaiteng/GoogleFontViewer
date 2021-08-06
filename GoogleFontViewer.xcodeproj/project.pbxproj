@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		062B9A8826BD10A900A6C185 /* WebFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A8726BD10A900A6C185 /* WebFont.swift */; };
 		062B9A8926BD10A900A6C185 /* WebFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A8726BD10A900A6C185 /* WebFont.swift */; };
 		062B9A8A26BD15C800A6C185 /* WebFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A8726BD10A900A6C185 /* WebFont.swift */; };
+		062B9A8E26BD255600A6C185 /* WebView in Frameworks */ = {isa = PBXBuildFile; productRef = 062B9A8D26BD255600A6C185 /* WebView */; };
+		062B9A9026BD296A00A6C185 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A8F26BD296A00A6C185 /* Apply.swift */; };
+		062B9A9126BD296A00A6C185 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A8F26BD296A00A6C185 /* Apply.swift */; };
 		0665820426BCCE8D00684C8E /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665820326BCCE8D00684C8E /* Tests_iOS.swift */; };
 		0665820F26BCCE8D00684C8E /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665820E26BCCE8D00684C8E /* Tests_macOS.swift */; };
 		0665821126BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */; };
@@ -42,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		062B9A8726BD10A900A6C185 /* WebFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebFont.swift; sourceTree = "<group>"; };
+		062B9A8F26BD296A00A6C185 /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontEditorApp.swift; sourceTree = "<group>"; };
 		066581E926BCCE8900684C8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		066581EA26BCCE8D00684C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062B9A8E26BD255600A6C185 /* WebView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +105,14 @@
 			path = WebFontService;
 			sourceTree = "<group>";
 		};
+		062B9A9226BD298800A6C185 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				062B9A8F26BD296A00A6C185 /* Apply.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		066581E226BCCE8900684C8E = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		066581E726BCCE8900684C8E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				062B9A9226BD298800A6C185 /* Utilities */,
 				062B9A8B26BD1DAF00A6C185 /* WebFontService */,
 				066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */,
 				066581E926BCCE8900684C8E /* ContentView.swift */,
@@ -185,6 +199,9 @@
 			dependencies = (
 			);
 			name = "GoogleFontViewer (iOS)";
+			packageProductDependencies = (
+				062B9A8D26BD255600A6C185 /* WebView */,
+			);
 			productName = "GoogleFontEditor (iOS)";
 			productReference = 066581EF26BCCE8D00684C8E /* GoogleFontViewer.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +293,9 @@
 				Base,
 			);
 			mainGroup = 066581E226BCCE8900684C8E;
+			packageReferences = (
+				062B9A8C26BD255600A6C185 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */,
+			);
 			productRefGroup = 066581F026BCCE8D00684C8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,6 +349,7 @@
 				0665822626BCD75300684C8E /* FontService.swift in Sources */,
 				062B9A8826BD10A900A6C185 /* WebFont.swift in Sources */,
 				0665821326BCCE8D00684C8E /* ContentView.swift in Sources */,
+				062B9A9026BD296A00A6C185 /* Apply.swift in Sources */,
 				0665821126BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +361,7 @@
 				0665822726BCD75300684C8E /* FontService.swift in Sources */,
 				062B9A8926BD10A900A6C185 /* WebFont.swift in Sources */,
 				0665821426BCCE8D00684C8E /* ContentView.swift in Sources */,
+				062B9A9126BD296A00A6C185 /* Apply.swift in Sources */,
 				0665821226BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,6 +742,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		062B9A8C26BD255600A6C185 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylehickinson/SwiftUI-WebView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		062B9A8D26BD255600A6C185 /* WebView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 062B9A8C26BD255600A6C185 /* XCRemoteSwiftPackageReference "SwiftUI-WebView" */;
+			productName = WebView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 066581E326BCCE8900684C8E /* Project object */;
 }

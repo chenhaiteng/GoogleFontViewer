@@ -12,7 +12,6 @@ enum WebFontDate : String {
 }
 
 struct WebFont: Codable {
-   
     var kind: String
     var family: String
     var variants: [String]
