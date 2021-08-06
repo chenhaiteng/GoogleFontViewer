@@ -12,6 +12,7 @@ enum WebFontDate : String {
 }
 
 struct WebFont: Codable {
+   
     var kind: String
     var family: String
     var variants: [String]
@@ -32,5 +33,13 @@ struct WebFontList: Codable {
         formatter.dateFormat = WebFontDate.format.rawValue
         decoder.dateDecodingStrategy = .formatted(formatter)
         return decoder
+    }
+}
+
+extension WebFont : Identifiable {
+    var id: String {
+        get {
+            "\(family)\(version)"
+        }
     }
 }
