@@ -13,7 +13,8 @@ let css2Api = "\"https://fonts.googleapis.com/css2?family="
 extension String.StringInterpolation {
     mutating func appendInterpolation(_ webFont: WebFont) {
         let family = webFont.family.replacingOccurrences(of: " ", with: "+")
-        appendLiteral("<link href=\(css2Api)\(family)\" rel=\"stylesheet\">")
+        let display = webFont.family.replacingOccurrences(of: " ", with: "%20")
+        appendLiteral("<link href=\(css2Api)\(family)&text=\(display)\" rel=\"stylesheet\">")
     }
 }
 
