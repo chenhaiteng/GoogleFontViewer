@@ -17,6 +17,9 @@
 		062B9A9526BD2B9800A6C185 /* FontPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A9326BD2B9800A6C185 /* FontPreview.swift */; };
 		062B9A9726BD333A00A6C185 /* FontsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A9626BD333A00A6C185 /* FontsModel.swift */; };
 		062B9A9826BD333A00A6C185 /* FontsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A9626BD333A00A6C185 /* FontsModel.swift */; };
+		062B9A9A26BF941000A6C185 /* DictionaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A9926BF941000A6C185 /* DictionaryBuilder.swift */; };
+		062B9A9B26BF941000A6C185 /* DictionaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A9926BF941000A6C185 /* DictionaryBuilder.swift */; };
+		062B9A9C26BF941000A6C185 /* DictionaryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B9A9926BF941000A6C185 /* DictionaryBuilder.swift */; };
 		0665820426BCCE8D00684C8E /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665820326BCCE8D00684C8E /* Tests_iOS.swift */; };
 		0665820F26BCCE8D00684C8E /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0665820E26BCCE8D00684C8E /* Tests_macOS.swift */; };
 		0665821126BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */; };
@@ -52,6 +55,7 @@
 		062B9A8F26BD296A00A6C185 /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		062B9A9326BD2B9800A6C185 /* FontPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPreview.swift; sourceTree = "<group>"; };
 		062B9A9626BD333A00A6C185 /* FontsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FontsModel.swift; path = Shared/FontsModel.swift; sourceTree = SOURCE_ROOT; };
+		062B9A9926BF941000A6C185 /* DictionaryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryBuilder.swift; sourceTree = "<group>"; };
 		066581E826BCCE8900684C8E /* GoogleFontEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleFontEditorApp.swift; sourceTree = "<group>"; };
 		066581E926BCCE8900684C8E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		066581EA26BCCE8D00684C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				062B9A8F26BD296A00A6C185 /* Apply.swift */,
+				062B9A9926BF941000A6C185 /* DictionaryBuilder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				062B9A9726BD333A00A6C185 /* FontsModel.swift in Sources */,
 				062B9A9026BD296A00A6C185 /* Apply.swift in Sources */,
 				0665821126BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */,
+				062B9A9A26BF941000A6C185 /* DictionaryBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +381,7 @@
 				062B9A9826BD333A00A6C185 /* FontsModel.swift in Sources */,
 				062B9A9126BD296A00A6C185 /* Apply.swift in Sources */,
 				0665821226BCCE8D00684C8E /* GoogleFontEditorApp.swift in Sources */,
+				062B9A9B26BF941000A6C185 /* DictionaryBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +392,7 @@
 				0665822826BCE20500684C8E /* FontService.swift in Sources */,
 				0665820426BCCE8D00684C8E /* Tests_iOS.swift in Sources */,
 				062B9A8A26BD15C800A6C185 /* WebFont.swift in Sources */,
+				062B9A9C26BF941000A6C185 /* DictionaryBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

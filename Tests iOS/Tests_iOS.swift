@@ -104,7 +104,100 @@ class Tests_iOS: XCTestCase {
         }
     }
     
+    func buildDictionary(@DictionaryBuilder<String, String> _ builder:()->Dictionary<String, String>) ->  Dictionary<String, String> {
+        return builder()
+    }
     
+    func buildString(@DictionaryBuilder<String, String> _ builder:()->String) -> String {
+        return builder()
+    }
+    
+    func testDictionaryBuilder() throws {
+        typealias DICT =  Dictionary<String, String>
+        let flagTrue = true
+        let flagFalse = false
+        
+        let result_empty: DICT = buildDictionary {
+        }
+        XCTAssertTrue(result_empty.isEmpty)
+        
+        let result_dict_1: DICT = buildDictionary {
+            ["first" : "1st"]
+        }
+        let result_tuple_1: DICT = buildDictionary {
+            ("first", "1st")
+        }
+        XCTAssertEqual(result_dict_1, ["first" : "1st"])
+        XCTAssertEqual(result_dict_1, result_tuple_1)
+        
+        let result_duplicate = buildDictionary {
+            ["first" : "1st"]
+            ("first", "2nd")
+        }
+        // duplicated key should keep the last value.
+        XCTAssertEqual(result_duplicate.count, result_dict_1.count)
+        XCTAssertNotEqual(result_duplicate, result_dict_1)
+        
+        let result_selection_true = buildDictionary {
+            if flagTrue {
+                ("first", "1st")
+            }
+        }
+        XCTAssertEqual(result_selection_true, result_dict_1)
+        let result_selection_false = buildDictionary {
+            if flagFalse {
+                ("first", "1st")
+            }
+        }
+        XCTAssertTrue(result_selection_false.isEmpty)
+        
+        let result_selection_true_multiple = buildDictionary {
+            if flagTrue {
+                ("first", "1st")
+                ["second": "2nd"]
+            }
+        }
+        XCTAssertEqual(result_selection_true_multiple.count, 2)
+        
+        let result_if_else_first = buildDictionary {
+            if flagTrue {
+                ("1", "1st")
+                ("2", "2nd")
+                ["3": "3rd"]
+            } else {
+                ("4", "4th")
+            }
+        }
+        XCTAssertEqual(result_if_else_first.count, 3)
+        
+        let result_if_else_second = buildDictionary {
+            if flagFalse {
+                ("1", "1st")
+                ("2", "2nd")
+                ["3": "3rd"]
+            } else {
+                ("4", "4th")
+            }
+        }
+        XCTAssertEqual(result_if_else_second.count, 1)
+        
+        let reuslt_string:String = buildString {
+            ("1", "1st")
+        }
+        XCTAssertEqual(reuslt_string, "1=1st")
+        
+        let result_string_2 = buildString {
+            ["1":"a",
+             "2":"b"]
+        }
+        // The dictionary is unorderd, use other statement to ensure the result
+//        XCTAssertEqual(result_string_2, "1=a&2=b")
+        let possible_result = "1=a&2=b"
+        XCTAssertEqual(result_string_2.count, possible_result.count)
+        let index = result_string_2.firstIndex(of:"&")
+        XCTAssertNotNil(index)
+        XCTAssertEqual(index!, possible_result.firstIndex(of: "&"))
+    }
     
 //    func testExample() throws {
 //        // UI tests must launch the application that they test.

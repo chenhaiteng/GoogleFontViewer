@@ -8,6 +8,18 @@
 import Foundation
 import Combine
 
+enum FontSorting: String {
+    case Alpha = "alpha"
+    case Date = "date"
+    case Popularity = "popularity"
+    case Style = "style"
+    case Trending = "trending"
+}
+
+extension FontSorting : CaseIterable {
+    
+}
+
 enum FontService : String {
     case key = "AIzaSyCTkCGwdsNyEXZw9oH1LvS-Lqzjk0_YRmI"
     case scheme = "https"
@@ -20,12 +32,25 @@ enum FontService : String {
     
     static var requestUrl: URL? {
         get {
-            var components = URLComponents()
-            components.scheme = scheme[]
-            components.host = host[]
-            components.path = path[]
-            components.query = "key=\(key[])"
-            return components.url
+            return requestUrl()
+        }
+    }
+    
+    static func requestUrl(@DictionaryBuilder<String, String> _ query: ()->String) -> URL? {
+        var components = URLComponents()
+        components.scheme = scheme[]
+        components.host = host[]
+        components.path = path[]
+        components.query = query()
+        return components.url
+    }
+    
+    static func requestUrl(_ sortBy:FontSorting? = nil) -> URL? {
+        return requestUrl {
+            ("key", key[])
+            if let sorting = sortBy?.rawValue {
+                ("sort", sorting)
+            }
         }
     }
     
