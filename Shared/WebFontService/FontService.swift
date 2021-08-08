@@ -54,8 +54,8 @@ enum FontService : String {
         }
     }
     
-    static func fetchData() throws -> AnyPublisher<Data, URLError> {
-        guard let url = requestUrl else { throw URLError(.badURL) }
+    static func fetchData(_ sortBy: FontSorting? = nil) throws -> AnyPublisher<Data, URLError> {
+        guard let url = requestUrl(sortBy) else { throw URLError(.badURL) }
         return URLSession.shared
             .dataTaskPublisher(for: url)
             .map { $0.data }
