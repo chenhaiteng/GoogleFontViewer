@@ -13,7 +13,6 @@ struct ContentView: View {
     @EnvironmentObject var model: FontsModel
     @State var sorting: FontSorting = .Popularity
     var body: some View {
-        
         VStack {
             Picker("sort", selection: $sorting) {
                 ForEach(FontSorting.allCases, id: \.self) { sort in
@@ -21,7 +20,9 @@ struct ContentView: View {
                 }
             }.segmented().onChange(of: sorting) { sort in
                 model.fetchFonts(sorting: sort)
-            }.frame(alignment: .top)
+            }.frame(alignment: .top).onAppear {
+                model.fetchFonts(sorting: sorting)
+            }
             if model.isFetching {
                 Spacer()
                 ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.red))

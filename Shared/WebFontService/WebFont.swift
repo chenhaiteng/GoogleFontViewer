@@ -17,21 +17,23 @@ struct WebFont: Codable {
     var variants: [String]
     var subsets: [String]
     var version: String
-    var lastModified: Date
+    var lastModified: String
     var files: [String:String]
     var category: String
+}
+
+extension JSONDecoder : HasApply {
+    
 }
 
 struct WebFontList: Codable {
     var kind: String
     var items: [WebFont]
     
-    static func decoder() -> JSONDecoder {
-        let decoder = JSONDecoder()
+    static let decoder: JSONDecoder = JSONDecoder().apply { decoder in
         let formatter = DateFormatter()
         formatter.dateFormat = WebFontDate.format.rawValue
         decoder.dateDecodingStrategy = .formatted(formatter)
-        return decoder
     }
 }
 

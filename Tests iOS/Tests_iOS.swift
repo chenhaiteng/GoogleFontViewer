@@ -74,7 +74,7 @@ class Tests_iOS: XCTestCase {
 
     func fetchFontList() throws -> AnyPublisher<WebFontList, Error> {
         try FontService.fetchData()
-            .decode(type: WebFontList.self, decoder: WebFontList.decoder()).eraseToAnyPublisher()
+            .decode(type: WebFontList.self, decoder: WebFontList.decoder).eraseToAnyPublisher()
     }
     
     func testFontService() throws {
