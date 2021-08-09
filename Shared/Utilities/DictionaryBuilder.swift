@@ -55,16 +55,7 @@ extension DictionaryBuilder {
     static func buildFinalResult(_ component: DictionaryBuilder<Key, Value>.Dict) -> Dict {
         return component
     }
-    // To create query string
-//    static func buildFinalResult(_ component: DictionaryBuilder<Key, Value>.Dict) -> String {
-//        var result = ""
-//        for (key, value) in component {
-//            result += "\(key)=\(value)&"
-//        }
-//        return String(result.dropLast())
-//    }
 }
-
 
 extension Dictionary where Key == String, Value == String {
     func toQuery() -> String {

@@ -38,6 +38,10 @@ It's the master view, which includes a segmented picker to switch different sort
 ### FontDetail
 The detail view to show more information about the selected font.
 
+![MVVM](GoogleFontViewer.svg)
+
+
+
 ## Other Tools
 ### Apply
 The concept of *apply* is taken from **Kotlin**. I use it to setup WKWebView, and avoid write more lots of view modifier.
