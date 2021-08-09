@@ -20,19 +20,25 @@ struct ContentView: View {
                 }
             }.segmented().onChange(of: sorting) { sort in
                 model.fetchFonts(sorting: sort)
-            }.frame(alignment: .top).onAppear {
+            }.frame(alignment: .top).padding().onAppear {
                 model.fetchFonts(sorting: sorting)
             }
-            if model.isFetching {
-                Spacer()
-                ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.red))
-                Spacer()
-            } else {
-                List(model.fonts.items, id: \.id) { font in
-                    WebView(webView: WKWebView().apply({ web in
-                        web.loadHTMLString(font.previewHtml(color: Color.black, background: Color.white), baseURL: nil)
-                    })).frame(height: 50).onTapGesture {
-                    }
+            
+            NavigationView {
+                if model.isFetching {
+                    VStack {
+                        Spacer()
+                        ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.red))
+                        Spacer()
+                    }.navigationBarHidden(true)
+                } else {
+                    List(model.fonts.items, id: \.id) { font in
+                        NavigationLink(destination: FontDetail(font)) {
+                            WebView(webView: WKWebView().apply({ web in
+                                web.loadHTMLString(font.previewHtml(color: Color.black, background: Color.white), baseURL: nil)
+                            })).frame(height: 50)
+                        }
+                    }.navigationBarHidden(true)
                 }
             }
         }
