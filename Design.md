@@ -44,7 +44,7 @@ The detail view to show more information about the selected font.
 
 ## Other Tools
 ### Apply
-The concept of *apply* is taken from **Kotlin**. I use it to setup WKWebView, and avoid write more lots of view modifier.
+The concept of *apply* is taken from **Kotlin**. I use it to setup WKWebView, and avoid to write lots of view modifier.
 
 ### DictionaryBuilder
 This custom attribute help us build dictionary with more flexible syntax, for example, to build dictionary with different condition.
