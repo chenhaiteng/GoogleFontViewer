@@ -1,5 +1,9 @@
 # GoogleFontViewer
 
-## Preview (v1)
+## Preview (v2)
 
 ![Preview](FontViewer.png)
+
+![Preview Detail](FontViewer_Detail.png)
+
+![Record](FontViewer.gif)
