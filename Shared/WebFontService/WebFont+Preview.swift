@@ -1,5 +1,5 @@
 //
-//  FontPreview.swift
+//  WebFont+Preview.swift
 //  GoogleFontViewer
 //
 //  Created by Chen Hai Teng on 8/6/21.
