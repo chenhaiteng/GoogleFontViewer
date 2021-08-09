@@ -56,11 +56,30 @@ extension DictionaryBuilder {
         return component
     }
     // To create query string
-    static func buildFinalResult(_ component: DictionaryBuilder<Key, Value>.Dict) -> String {
+//    static func buildFinalResult(_ component: DictionaryBuilder<Key, Value>.Dict) -> String {
+//        var result = ""
+//        for (key, value) in component {
+//            result += "\(key)=\(value)&"
+//        }
+//        return String(result.dropLast())
+//    }
+}
+
+
+extension Dictionary where Key == String, Value == String {
+    func toQuery() -> String {
         var result = ""
-        for (key, value) in component {
+        for (key, value) in self {
             result += "\(key)=\(value)&"
         }
         return String(result.dropLast())
+    }
+    
+    func toStyle() -> String {
+        var result = ""
+        for (key, value) in self {
+            result += "\(key):\(value);"
+        }
+        return result
     }
 }

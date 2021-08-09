@@ -108,9 +108,9 @@ class Tests_iOS: XCTestCase {
         return builder()
     }
     
-    func buildString(@DictionaryBuilder<String, String> _ builder:()->String) -> String {
-        return builder()
-    }
+//    func buildString(@DictionaryBuilder<String, String> _ builder:()->String) -> String {
+//        return builder()
+//    }
     
     func testDictionaryBuilder() throws {
         typealias DICT =  Dictionary<String, String>
@@ -181,15 +181,16 @@ class Tests_iOS: XCTestCase {
         }
         XCTAssertEqual(result_if_else_second.count, 1)
         
-        let reuslt_string:String = buildString {
+        let reuslt_string = buildDictionary {
             ("1", "1st")
         }
-        XCTAssertEqual(reuslt_string, "1=1st")
         
-        let result_string_2 = buildString {
+        XCTAssertEqual(reuslt_string.toQuery(), "1=1st")
+        
+        let result_string_2 = buildDictionary {
             ["1":"a",
              "2":"b"]
-        }
+        }.toQuery()
         // The dictionary is unorderd, use other statement to ensure the result
 //        XCTAssertEqual(result_string_2, "1=a&2=b")
         let possible_result = "1=a&2=b"

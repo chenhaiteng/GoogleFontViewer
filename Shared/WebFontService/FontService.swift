@@ -36,12 +36,12 @@ enum FontService : String {
         }
     }
     
-    static func requestUrl(@DictionaryBuilder<String, String> _ query: ()->String) -> URL? {
+    static func requestUrl(@DictionaryBuilder<String, String> _ builder: ()->Dictionary<String, String>) -> URL? {
         var components = URLComponents()
         components.scheme = scheme[]
         components.host = host[]
         components.path = path[]
-        components.query = query()
+        components.query = builder().toQuery()
         return components.url
     }
     

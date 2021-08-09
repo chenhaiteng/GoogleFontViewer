@@ -20,7 +20,16 @@ extension String.StringInterpolation {
 
 extension WebFont {
     func previewHtml(color: Color, background: Color) -> String {
-        let result = "\(self)<div style=\"background-color: \(background); color:\(color); font-size:10vw;font-family: '\(self.family)', \(self.category);\">\(self.family)</div>"
-        return result
+        let div = div(self.family) {
+            ("background-color", "\(background)")
+            ("color", "\(color)")
+            ("font-size", "10vw")
+            ("font-family", "'\(self.family)', \(self.category)")
+        }
+        return "\(self)\(div)"
+    }
+    
+    func div(_ content:String, @DictionaryBuilder<String, String> style: () -> Dictionary<String, String>) -> String {
+        return "<div style=\"\(style().toStyle())\">\(content)</div>"
     }
 }
